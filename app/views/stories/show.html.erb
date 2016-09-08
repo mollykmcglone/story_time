@@ -13,7 +13,7 @@
   <p>This story has not been written yet!</p>
 <% end %>
 
-<%= link_to 'Keep the story going!', new_story_contribution_path(@story) %>
+<%= link_to 'Keep the story going!', new_story_contribution_path(@story) %><hr>
 
 <%= link_to 'Edit', edit_story_path(@story) %><br>
 <%= link_to 'Delete', story_path(@story), :data => {:confirm => "Are you sure?", :method => "delete"} %><br>
