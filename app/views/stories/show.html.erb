@@ -6,6 +6,8 @@
       <%= contribution.sentence %>
       <%= contribution.username %>
       <%= image_tag contribution.image.image %>
+      <%= link_to 'Edit Contribution', edit_story_contribution_path(@story, contribution) %>
+      <%= link_to 'Delete Contribution', story_contribution_path(@story, contribution), :data => {:confirm => "Are you sure?", :method => "delete"} %><br>
     </li>
     <% end %>
   </ul>
@@ -15,7 +17,7 @@
 
 <%= link_to 'Keep the story going!', new_story_contribution_path(@story) %><hr>
 
-<%= link_to 'Edit', edit_story_path(@story) %><br>
-<%= link_to 'Delete', story_path(@story), :data => {:confirm => "Are you sure?", :method => "delete"} %><br>
+<%= link_to 'Edit Story Title', edit_story_path(@story) %><br>
+<%= link_to 'Delete Story', story_path(@story), :data => {:confirm => "Are you sure?", :method => "delete"} %><br>
 
 <%= link_to "Return to stories", stories_path %>

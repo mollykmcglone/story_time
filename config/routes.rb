@@ -3,7 +3,5 @@ Rails.application.routes.draw do
     resources :contributions
   end
 
-  resources :contributions do
-    resources :images
-  end
+  resources :images
 end
