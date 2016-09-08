@@ -1,7 +1,6 @@
 class StoriesController < ApplicationController
   def index
-    @stories = Story.all
-    render :index
+    @stories = Story.order('title ASC, created_at DESC')
   end
 
   def show
@@ -10,7 +9,6 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
-    render :new
   end
 
   def create
@@ -21,6 +19,19 @@ class StoriesController < ApplicationController
     else
       flash[:alert] = "Oops, please try again."
       render :new
+    end
+  end
+
+  def edit
+    @story = Story.find(params[:id])
+  end
+
+  def update
+    @story = Story.find(params[:id])
+    if @story.update(story_params)
+      redirect_to stories_path
+    else
+      render :edit
     end
   end
 
