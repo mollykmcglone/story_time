@@ -1,0 +1,14 @@
+<h1><%= image_tag @image.image %></h1>
+<h3>Story contributions related to this image:</h3>
+<% if @image.contributions.any? %>
+  <ul>
+    <% @image.contributions.each do |contribution| %>
+    <li>
+      <%= contribution.sentence %>
+      <%= contribution.username %>
+    </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>This image has not been used in any stories yet!</p>
+<% end %>
