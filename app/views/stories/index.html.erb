@@ -2,9 +2,16 @@
 
 <ul>
   <% @stories.each do |story| %>
-    <li><%= link_to story.title, story_path(story) %></li>
+    <li><%= link_to story.title, story_path(story) %>  (started <%= time_ago_in_words(story.created_at) %> ago)</li>
   <% end %>
 </ul>
 
 <p><%= link_to "Create a New Story", new_story_path %></p>
 <p><%= link_to "View Inspiring Images", images_path %></p>
+
+<%= form_tag stories_path, :method => "get" do%>
+  <p>
+  <%= text_field_tag :title, params[:title] %>
+  <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>

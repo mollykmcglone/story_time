@@ -1,6 +1,10 @@
 class StoriesController < ApplicationController
   def index
+    if params[:title]
+      @stories = Story.fuzzy_search(title: (params[:title]))
+    else
     @stories = Story.order('title ASC, created_at DESC')
+    end
   end
 
   def show
