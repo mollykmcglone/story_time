@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ .flash_alert {
+  font-size: 1.5em;
+  color: #FFFFFF;
+  background-color: red;
+}
+
+.flash_notice {
+  font-size: 1.5em;
+  color: #FFFFFF;
+  background-color: green;
+}
+
+ul {
+  list-style: none;
+}
+
+.col-xs-3 {
+  width: 120px;
+  height: 120px;
+  margin: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+body {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  h1, h2, h3, h4, h5, p {
+    margin-top: 1em;
+    padding-top: 1em;
+    color: #333;
+    line-height: 1.5;
+  }
+}

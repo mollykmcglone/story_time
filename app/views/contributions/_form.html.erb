@@ -1,8 +1,10 @@
-<%= form_for [@story, @contribution] do |f| %>
+<div class="col-xs-6">
+  <%= form_for [@story, @contribution] do |f| %>
   <%= f.label :sentence %>
-  <%= f.text_area :sentence, size: "15x4" %>
+  <%= f.text_area :sentence, size: "15x4", :class => "form-control"%>
   <%= f.label :username %>
-  <%= f.text_field :username %>
+  <%= f.text_field :username, :class => "form-control"%>
   <%= f.hidden_field :image_id, :value => @image.id %>
-  <%= f.submit %>
-<% end %>
+  <%= f.submit :class => "btn btn-primary"%>
+  <% end %>
+</div>

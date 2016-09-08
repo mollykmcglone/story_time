@@ -1,7 +1,17 @@
-<h1>Click on an image to see what it has inspired!</h1>
+<h1 class="center">Click on an image to see what it has inspired!</h1>
 
-<ul>
-  <% @images.each do |image| %>
-    <li><%= link_to (image_tag image.image), image_path(image) %></li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1">
+    <ul>
+      <% @images.each do |image| %>
+      <div class="col-xs-3"><%= link_to (image_tag image.image), image_path(image) %></div>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-2 col-xs-offset-5">
+    <%= link_to "New Story", new_story_path, :class => "btn btn-primary btn-block btn-lg" %>
+  </div>
+</div>
